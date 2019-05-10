@@ -1,0 +1,13 @@
+<!--pages/calendar/calendar.wxml-->
+<view style="width: 90%;margin: 0 auto;">
+  <calendar calendar="{{calendar}}" gesture="{{gesture}}"></calendar>
+
+</view>
+<view class="skin-list">
+    <block wx:for="{{tmpEHB}}" wx:for-item="skinItem" wx:for-index="skinIndex" wx:key="skin">
+        <view class="skin-item" data-id="{{skinItem.id}}" bindtap="chooseSkin">
+            <image src="{{skinItem.imgUrl}}" class="skin-img"></image>
+            <view class="skin-title">{{skinItem.title}}</view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/calendar/calendar",
+    "pages/mine/mine",
+    "pages/expo/expo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#57A2FF",
+    "color": "#999999",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "全球展览",
+        "iconPath": "images/shouye_1.png",
+        "selectedIconPath": "images/shouye.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "日历行程",
+        "iconPath": "images/daikuandaquan_1.png",
+        "selectedIconPath": "images/daikuandaquan.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "images/wode_1.png",
+        "selectedIconPath": "images/wode.png"
+      }
+    ]
+  }
+}

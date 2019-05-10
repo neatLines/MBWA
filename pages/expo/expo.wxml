@@ -1,0 +1,25 @@
+<!--pages/expo/expo.wxml-->
+<view class="container">
+  <view class="fd-hd">
+    <view class="fd-hd-bg" style="background-image: url({{expoInfo.images.large}})"></view>
+    <image src="{{expoInfo.images.large}}" class="fd-cover"></image>
+    <view class="fd-intro">
+      <view class="fd-title">{{expoInfo.title}}</view>
+      <view class="fd-intro-txt">地址：{{expoInfo.local}}</view>
+      <view class="fd-intro-txt">时间：{{expoInfo.startTime}}到{{expoInfo.endTime}}</view>
+    </view>
+    <view wx:if="{{!inTravel}}">
+
+      <view class="fd-favorite">
+        <picker mode="date" value="{{date}}" start="{{expoInfo.startTime}}" end="{{expoInfo.endTime}}" bindchange="setTravel">
+          加入行程
+          </picker>
+      </view>
+    </view>
+    <view wx:else class='fd-favorite' bindtap='cancelTravel'>删除行程</view>
+  </view>
+  <view class="fd-bd">
+    <view class="fd-bd-title">简介</view>
+    <view class="fd-bd-intro">{{expoInfo.summary}}</view>
+  </view>
+</view>
