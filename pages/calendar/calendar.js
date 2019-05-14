@@ -5,7 +5,7 @@ import initCalendar, {
   getSelectedDay,
   clearTodoLabels
 } from '../../component/calendar/main.js';
-var mock = require('../../date/mock.js')
+var mock = require('../../data/mock.js')
 var allEHB = new Map()
 mock.skinList.forEach(v => {
   allEHB.set(v.id, v)

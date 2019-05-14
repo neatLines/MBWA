@@ -1,6 +1,7 @@
 // pages/expo/expo.js
-var mock = require('../../date/mock.js')
+var mock = require('../../data/mock.js')
 import { reflushTodoLabel } from '../calendar/calendar.js'
+
 Page({
 
   /**
@@ -10,7 +11,10 @@ Page({
     id:"",
     expoInfo:{},
     inTravel: false,
-    travelDate: null
+    travelDate: null,
+    ellipsis: true,     // 文字是否收起，默认收起
+    skinList: mock.skinList,
+    ellipsisUrl: './ellipse.png'
   },
 
   /**
@@ -141,5 +145,22 @@ Page({
 
       },
     })
+  },
+
+  ellipsis() {
+    let that = this;
+    let value = !this.data.ellipsis;
+    that.setData({
+      ellipsis: value,
+      ellipsisUrl: value?'./ellipse.png':'./unellipse.png'
+    })
+  },
+
+  chooseSkin: function (e) {
+    var id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../list/detail?id='+id,
+    })
   }
+  
 })

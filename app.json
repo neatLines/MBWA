@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/list/list",
     "pages/logs/logs",
     "pages/calendar/calendar",
     "pages/mine/mine",
-    "pages/expo/expo"
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +20,7 @@
     "backgroundColor": "#FFFFFF",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/list/list",
         "text": "全球展览",
         "iconPath": "images/shouye_1.png",
         "selectedIconPath": "images/shouye.png"

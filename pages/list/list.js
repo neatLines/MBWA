@@ -1,5 +1,5 @@
 // pages/index/index.js
-var mock = require('../../date/mock.js')
+var mock = require('../../data/mock.js')
 
 Page({
 
@@ -82,7 +82,7 @@ Page({
   chooseSkin: function (e) {
     var id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../expo/expo?id='+id,
+      url: '../detail/detail?id='+id,
     })
   }
 })
