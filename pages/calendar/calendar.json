@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "日历",
+  "navigationBarTitleText": "行程日历",
   "usingComponents": {
     "calendar": "../../component/calendar/index"
   }

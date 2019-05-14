@@ -1,0 +1,49 @@
+<!--pages/expo/expo.wxml-->
+<view class="container">
+  <image src="{{expoInfo.imgUrl}}" class="fd-cover"></image>
+  <view class="fd-hd" style="background-size:cover;background-image: url('../detail/background.jpg');">
+      <view class="fd-intro">
+        <view class="fd-title">{{expoInfo.title}}</view>
+        <view class="fd-intro-txt">地址：{{expoInfo.local}}</view>
+        <view class="fd-intro-txt">时间：{{expoInfo.startTime}}到{{expoInfo.endTime}}</view>
+        <view class="fd-bd-intro">{{expoInfo.summary}}</view>
+      </view>
+      <view>
+        <text class="content {{ellipsis?'ellipsis':'unellipsis'}}">
+          飞房间卡了飞机而来发发色法尔范发疯安峰山粉色案发前二十阿里附近发打发打发是范德萨发放就开
+          了房间爱离开房间爱卡房间爱疯爱疯飞房间卡了飞机而来发发色法尔范发疯安峰山粉色案发飞房间卡
+          了飞机而来发发色法尔范发疯安峰山粉色案发
+        </text>
+        <view bindtap='ellipsis'>
+          <view style="height:50rpx;text-align:center;">
+            <!-- {{ellipsis?'展开':'收起'}} -->
+            <!-- const url = {{ellipsis?'../../images/ellipse' : '../../images/unellipse'}}; -->
+            <image src="{{ellipsisUrl}}" style='width:50rpx;height:50rpx'></image>
+          </view>
+        </view>
+      </view>  
+  </view>
+  <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;margin-top:40px;" >
+    <view class="skin-item" data-id="{{skinItem.id}}" bindtap="chooseSkin" style="background: yellow; width: 200px; height: 100px; display: inline-block" wx:for="{{skinList}}" wx:for-item="skinItem" wx:for-index="skinIndex" wx:key="skin">
+      <image src="{{skinItem.imgUrl}}" class="skin-img"></image>
+      <view class="skin-title">{{skinItem.title}}</view>
+    </view>
+  </scroll-view>
+  <view>
+      <view wx:if="{{!inTravel}}">
+        <view class="fd-favorite">
+          <picker mode="date" value="{{date}}" start="{{expoInfo.startTime}}" end="{{expoInfo.endTime}}" bindchange="setTravel">
+            加入行程
+          </picker>
+        </view>
+      </view>
+      <view wx:else class='fd-favorite' bindtap='cancelTravel'>删除行程</view>
+  </view>
+  <view class="comments" style='width:100%'>
+    <image style="width:30px;height:30px;border-radius:30px" src="{{expoInfo.imgUrl}}"  />
+    <view>
+      <view>name</view>
+      <view>comment</view>
+    </view>
+  </view>
+</view>
